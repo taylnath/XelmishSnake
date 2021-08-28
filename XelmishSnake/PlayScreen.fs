@@ -30,7 +30,6 @@ let rec moveLastToNewFirst (lis: (int * int) list) (pos: int * int) =
     | [] -> []
     | [x] -> [pos]
     | x::xs -> (moveLastToNewFirst xs pos) @ [x]
-//let moveLastToShiftedFirst lis dir = moveLastToNewFirst lis (shiftBy lis.[0] dir)
 let moveLastToShiftedFirst (lis: (int * int) list) dir = [shiftBy lis.[0] dir] @ lis.GetSlice (None, Some (lis.Length - 2))
     
 let init () = {
